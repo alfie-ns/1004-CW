@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <title>Report</title>
+<body>
+    <!-- Create a web page that displays the strategic report, in a div to look clean, organised and professional -->
+    <div class="report-container">
+        <h2>Strategic Report for {{ user_name }}</h2>
+        <p>
+            {{ generated_report  | safe }}
+        </p>
+    </div>
+    <!-- Create a button that allows the user to download the report as a pdf file -->
+    <a href="/download_report" class="download-button">
+        Download PDF
+    </a>
+{% endblock %}

@@ -1,0 +1,150 @@
+<!--This file contains the register.html code-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icon.ico') }}" type="image/x-icon">
+    <title>Register</title>
+</head>
+<body>
+    <div class="content-container">
+        <!--Main heading-->
+        <a href="{{ url_for('routes.about') }}">
+            <h1 class="main-heading">Dr. Fit</h1>
+          </a>
+        <div class="register-container">
+            <h1 class="register-header">Register</h1>
+            <form action="/process-register" method="POST">
+                <!--Username-->
+                <label for="username"><u>Username</u></label>
+                <input type="text" id="username" name="username" style="width: 70%" value="testUser" required>
+                <span id="username-error" class="error-message" style="font-weight: bold;"></span>
+                <!--Email-->
+                <label for="email"><u>Email</u></label>
+                <input type="email" id="email" name="email" style="width: 70%" value="oladeanio@gmail.com" required>
+                <!--Password-->
+                <label for="password"><u>Password</u></label>  
+                <input type="password" id="password" name="password" style="width: 70%" value="Password1!" required>
+                <div class="message-container">
+                    <span id="password-error" class="error-message" style="font-weight: bold;"></span>
+                    <p class="registeration_messages">Passwords must be at-least 8 characters long. Include at-least 1: Uppercase letter<br>Lowercase letter<br>Number<br>Special character</p>
+                </div>
+                <!--Confirm Password-->
+                <label for="confirm-password"><u>Confirm Password</u></label>
+                <input type="password" id="confirm-password" style="width: 70%" value="Password1!" placeholder="Confirm password">
+                <div id="confirm-password-error"></div>
+                <!--Gender-->
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" class="reg_inputs"> 
+                    <option value="">Choose...</option>
+                    <option value="male" selected>Male</option>
+                    <option value="female">Female</option>
+                    <option value="other" disabled>Other</option>
+                </select>
+                <!--Age-->
+                <label for="age">Age</label>
+                <input class="reg_inputs" type="number" id="age" name="age" min="1" max="120" value=20 required>
+                <span id="age_error" class="error-message" style="font-weight: bold;"></span> 
+                <!--Height-->
+                <label for="height">Height</label>
+                <div id="height_input">
+                    <input class="reg_inputs" type="number" id="height" name="height" min="1" value=175 required>
+                </div>
+                <select class="reg_inputs" id="height_unit" name="height_unit" required onchange="changeHeightInput()">
+                    <option value="cm" selected>cm</option>
+                    <option value="ft">ft</option>
+                </select>
+                <!--Weight-->
+                <label for="weight">Weight</label>
+                <div id="weight_input">
+                    <input class="reg_inputs" type="number" id="weight" name="weight" min="1" value=75 required>
+                </div>
+                <select class="reg_inputs" id="weight_unit" name="weight_unit" required onchange="changeWeightInput()">
+                    <option value="kg" selected>kg</option>
+                    <option value="lb">lb</option>
+                </select>
+                <!--Goal-->
+                <label for="goal">Goal</label>
+                <select class="reg_inputs" id="goal" name="goal" required>
+                    <option value="">Select goal</option>
+                    <option value="bulk" title="Increase muscle mass and strength through resistance training and proper nutrition" selected>Bulk</option>
+                    <option value="lose_weight" title="Reduce body fat through a combination of diet and exercise">Lose weight</option>
+                    <option value="healthy_happiness" title="Focus on overall well-being, including physical, mental, and emotional health">Healthy happiness</option>
+                    <option value="improve_posture" title="Enhance posture through exercises that strengthen postural muscles and promote proper alignment">Improve posture</option>
+                    <option value="stress_reduction" title="Incorporate relaxation techniques, such as yoga and meditation, to manage stress and improve mental health">Stress reduction</option>
+                    <option value="improve_flexibility" title="Increase range of motion and prevent injury through stretching and mobility exercises">Improve flexibility</option>
+                    <option value="improve_endurance" title="Increase cardiovascular fitness through aerobic exercise">Improve endurance</option>
+                    <option value="six_pack" title="Getting a six pack">Six Pack</option>
+                </select> 
+                <!--Determination Level-->
+                <label for="determination_level">Determination Level</label>
+                <select class="reg_inputs" id="determination_level" name="determination_level" required onchange="changeGoalTimeframe()">
+                    <option value="">Select Determination Level</option>
+                    <option value="casual" selected>Casual</option>
+                    <option value="determined">Determined</option>
+                    <option value="very_determined">Very Determined</option>
+                </select>
+                <!--Goal Timeframe (readonly and hidden)-->
+                <input type="hidden" id="goal_timeframe" name="goal_timeframe" readonly>
+                <span id="goal_timeframe-display" style="font-weight: bold;"></span>
+                <!--Activity Level-->
+                <label for="activity_level">Activity Level</label>
+                <select class="reg_inputs" id="activity_level" name="activity_level" required>
+                    <option value="">Select Activity Level</option>
+                    <option value="sedentary">Sedentary (little or no exercise, desk job)</option>
+                    <option value="lightly_active">Lightly Active (light exercise/sports 1-3 days/wk)</option>
+                    <option value="moderately_active" selected>Moderately Active (moderate exercise/sports 6-7 days/wk)</option>
+                    <option value="very_active">Very Active (hard exercise every day, or 2x/day)</option>
+                    <option value="extra_active">Extra Active (hard exercise 2+ hrs/day, training for marathon, triathlon, etc.)</option>
+                </select>
+                <!--BMR type-->
+                <label for="bmr_type">BMR Type</label>
+                <select class="reg_inputs" id="bmr_type" name="bmr_type" required>
+                    <option value="">Select BMR Type</option>
+                    <option value="mifflin_st_jeor">Mifflin-St Jeor</option>
+                    <option value="harris_benedict">Harris-Benedict</option>
+                    <option value="katch_mcardle">Katch-McArdle</option>
+                </select>
+                <!--Message to tell user only to use mifflin st jeor if loosing weight-->
+                <div class="message-container">
+                    <p id="bmrMessage" class="registeration_messages"></p>
+                </div>                
+                <!--Body Fat Percentage-->
+                <label id="bf_label" for="body_fat_percentage" style="display: none;">Body Fat Percentage (%)</label>
+                <input type="number" class="reg_inputs" id="body_fat_percentage" name="body_fat_percentage" style="display: none;" >
+                <!--ADVANCED REGISTERATION DETAILS-->
+                <div id="advanced_details">
+                    <!--Waist-->
+                    <label for="waist">Waist(cm)</label>
+                    <div id="waist_input">
+                        <input class="reg_inputs" type="number" id="waist" name="waist">
+                    </div>
+                    <!--Neck-->
+                    <label for="neck">Neck(cm)</label>
+                    <div id="neck_input">
+                        <input class="reg_inputs" type="number" id="neck" name="neck">
+                    </div>
+                    <!--Hip-->
+                    <label for="hip">Hip(cm)</label>
+                    <div id="hip_input">
+                        <input class="reg_inputs" number="number" id="hip" name="hip">
+                    </div>
+                </div>
+                <!--Use advanced registration-->
+                <div class="advanced_details_checkbox">
+                    <label for="use_advanced_registration">Advanced Registration</label>
+                    <input type="checkbox" id="use_advanced_registration" name="use_advanced_registration">
+                </div>
+                <!--Submit Button-->
+                <input class="reg_log_submit_btns" type="submit" value="Register" style="width:70%">
+            </form>
+            <a href="/login.html"><b>Login</b></a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts/register.js') }}"></script>
+</body>
+</html>

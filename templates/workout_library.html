@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Workout Library</h1>
+    <form action="{{ url_for('plans.create_workout_plan') }}" method="POST">
+        <div class="form-group custom">
+            <label for="fitness_level">Fitness Level:</label>
+            <select class="form-control" name="fitness_level" id="fitness_level">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+        <div class="form-group custom">
+            <label for="goal">Goal:</label>
+            <select class="form-control" name="goal" id="goal">
+                <option value="strength">Strength</option>
+                <option value="endurance">Endurance</option>
+                <option value="weight_loss">Weight Loss</option>
+                <option value="muscle_gain">Muscle Gain</option>
+            </select>
+        </div>
+        <div class="form-group custom">
+            <label for="preferred_exercises">Preferred Exercises (comma-separated):</label>
+            <input type="text" class="form-control" name=preferred_exercises id="preferred_exercises" placeholder="e.g. Bench Press, Squat, Deadlift">
+        </div>
+        <br>
+        <div class="center-btn">
+            <button type="submit" class="btn btn-primary">Create Workout Plan</button>
+        </div>
+    </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-info" role="alert">
+        <strong>Your Personalized Workout Plan:</strong><br>
+        {% for message in messages %}
+        {{ message|safe }}
+        {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        {% if workout_plans %}
+        <h3>Your Workout Plans</h3>
+        <ul class="list-group">
+            {% for plan in workout_plans %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ plan.name }}
+                <form action="{{ url_for('delete_workout_plan', plan_id=plan.id) }}" method="POST">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+</div>
+<div class="container">
+    <p>
+        Browse through our extensive collection of workouts to find the perfect routine for your fitness goals.
+    </p>
+    <h2>Featured Workouts</h2>
+    <ul class="workout-list">
+        <li>
+            <h3>Strength Training</h3>
+            <p>Build muscle, increase strength, and enhance your overall performance with these workouts.</p>
+        </li>
+        <li>
+            <h3>Cardio</h3>
+            <p>Improve your endurance and heart health with these heart-pumping exercises.</p>
+        </li>
+        <li>
+            <h3>Calisthenics</h3>
+            <p>Develop functional strength, flexibility, and balance using just your body weight.</p>
+        </li>
+        <li>
+            <h3>Yoga</h3>
+            <p>Relax, stretch, and strengthen your body with these yoga routines.</p>
+        </li>
+        <li>
+            <h3>Pilates</h3>
+            <p>Tone and sculpt your body with these low-impact Pilates exercises.</p>
+        </li>
+    </ul>
+</div>
+{% endblock %}

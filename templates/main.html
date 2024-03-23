@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <title>Dr. Fit</title>
+<body>
+    <nav>
+        <h1>Virtual Personal Trainer</h1>
+    </nav>  
+    <div class="form-wrapper">  
+        <form action="{{ url_for('get_response.response', user_id=user_id) }}" method="POST">
+            <div class="button-container">
+                <button class="example_question" type="button" onclick="fillQuestion('What should I eat today?')">What should I eat today?</button>
+                <button class="example_question" type="button" onclick="fillQuestion('What is the best exercise for my goal?')">What is the best exercise for my goal?</button>
+                <button class="example_question" type="button" onclick="fillQuestion('How can I lose bodyfat?')">How can I lose bodyfat?</button>
+                <button class="example_question" type="button" onclick="fillQuestion('How can I gain muscle while losing fat?')">How can I gain muscle while losing fat?</button>
+                <button class="example_question" type="button" onclick="fillQuestion('How can I improve my posture?')">How can I improve my posture?</button>
+                <button class="example_question" type="button" onclick="fillQuestion('How can I reduce stress?')">How can I reduce stress?</button>
+                <button class="example_question" type="button" onclick="fillQuestion('How can I improve my flexibility?')">How can I improve my flexibility?</button>
+                <button class="example_question" type="button" onclick="fillQuestion('How can I improve my endurance?')">How can I improve my endurance?</button>
+                <button class="example_question" type="button" onclick="fillQuestion('What sports should I do')">What sports should I do</button>
+            </div>
+            <textarea id="user_message" class="user_message" name="user_message" placeholder="Ask me any fitness-related questions, share your goals, or request workout and nutrition advice."></textarea>
+            <div class="button-wrapper">
+                <button type="submit" class="send-btn">Send</button>
+                <button class="send-btn" type="button" class="clear-conversation" onclick="if (confirm('Are you sure you would like to delete everything?')) { location.href='/clear_conversation' }">Clear All</button>
+                <button id="clear-btn" class="send-btn" type="button" class="clear-conversation" onclick=>Clear Message</button>
+            </div>
+        </form> 
+    </div>
+    <br>  
+    <div id="response">
+        {% if conversation %}
+            {% for message in conversation %}
+                <div class="message-container{% if message.role == 'user' %}-user{% else %}-gpt{% endif %}">
+                    {% if message.role == "user" %}
+                        <p class="break-lines"><strong>{{ current_user.username }}: </strong> {{ message.content | safe }}</p>
+                    {% else %}
+                        {% if message.content != None %} 
+                            <p class="break-lines"><strong>Dr. Fit (Virtual-Personal-Trainer): </strong> <br><br>{{ message.content | safe }}</p>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <!-- <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>  
+{% endblock %}
+
+

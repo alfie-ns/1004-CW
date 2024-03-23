@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>YouTube Transcript Fetcher</title>
+    </head>
+    <body>
+        <h1>Fetch YouTube Transcript</h1>
+        <form id="youtube-form" action="\" method="POST">
+            <label for="query">Get YouTube Transcript with URL:</label><br>
+            <input type="text" id="query" name="query"><br>
+            <input type="submit" value="Search">
+        </form>
+        <div class="container">
+            {% for response in responses %}
+                <p>{{ response }}</p>
+            {% endfor %}
+        </div>
+        <div id="results"></div>
+        <div id="transcript"></div>
+    </body>
+    <script src="{{ url_for('static', filename='scripts/get_youtube.js')}}"></script>
+{% endblock %}

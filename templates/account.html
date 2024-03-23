@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %} 
+        <div class="container">
+            <h2 class="mt-3">Welcome, {{ current_user.username }}!</h2>
+            <hr>
+            <ul>
+                <h3 class="mt-3">Profile</h3>
+                <li><b>Goal:</b> <i>{{ current_user.get_formatted_goal() }} in {{ current_user.get_goal_timeframe() }} months</i></li>
+                <li><b>Age:</b> <i>{{ current_user.get_formatted_age() }}</i></li>
+                <li><b>Gender:</b> <i>{{ current_user.get_formatted_gender() }}</i></li>
+                <li><b>Height:</b> <i>{{ current_user.get_formatted_height() }}</i></li>
+                <li><b>Weight:</b> <i>{{ current_user.get_formatted_weight() }}</i></li>
+                <li><b>Activity Level:</b> <i>{{ current_user.get_formatted_activity_level() }}</i></li>
+                <li><b>Determination:</b> <i>{{ current_user.get_determination_level() }}</i></li>
+                <hr>
+                <h3 class="mt-3">Calculations</h3>
+                <li><b>Current BMR:</b> <i>{{ current_user.get_bmr() }} cal</i></li>
+                <li><b>Daily Calorific Needs:</b> <i>{{ current_user.get_calorific_needs() }} cal</i></li>
+                <li><b>Ideal Body Weight</b> <i>{{ current_user.get_ideal_body() }}</i></li>
+                <li><b>Macronutrient Split</b> <i>{{ current_user.get_macros_split() }}</i></li>
+                <li><b>Total Daily Energy Expenditure (TDEE)</b> {{ current_user.get_tdee() }} cal</li>
+                <li><b>Body Mass Index (BMI)</b> {{ current_user.get_bmi() }} kg/m²</li>
+                <li><b>Body Fat Percentage</b> {{ current_user.get_body_fat() }} </li>
+            </ul>
+            <hr>
+            <div class="account_button_container"></div>
+                <form action="/get_initial_plan" method="POST">
+                    <button class = "get_initial_btn" type="submit">Make API Call</button>
+                </form> 
+        </body>
+    </div>
+        <br>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="{{ url_for('static', filename='scripts/account.js') }}"></script>
+{% endblock %}    

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Nutrition Plans</h1>
+    <p>
+        A well-balanced nutrition plan is essential for achieving your fitness goals and maintaining a healthy lifestyle. Here, you can explore various meal plans tailored to your individual needs and preferences.
+    </p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Meal Plan Options</h3>
+            <ul>
+                <li><a href="{{ url_for('nutrition.generate_meal_plan', user_id=current_user.id) }}">Weight Loss Meal Plan</a></li>
+                <li><a href="#">Muscle Building Meal Plan</a></li>
+                <li><a href="#">Vegetarian Meal Plan</a></li>
+                <li><a href="#">Vegan Meal Plan</a></li>
+                <li><a href="#">Gluten-Free Meal Plan</a></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h3>Healthy Recipes</h3>
+            <ul>
+                <li><a href="#">Breakfast Recipes</a></li>
+                <li><a href="#">Lunch Recipes</a></li>
+                <li><a href="#">Dinner Recipes</a></li>
+                <li><a href="#">Snack Recipes</a></li>
+                <li><a href="#">Smoothie Recipes</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Helpful Tips & Articles</h3>
+            <ul>
+                <li><a href="#">The Importance of a Balanced Diet</a></li>
+                <li><a href="#">Top 10 Superfoods You Should Be Eating</a></li>
+                <li><a href="#">How to Meal Prep for a Busy Week</a></li>
+                <li><a href="#">The Benefits of Drinking Water</a></li>
+                <li><a href="#">Understanding Macronutrients and Micronutrients</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
