@@ -1,11 +1,14 @@
 # Dr. Fit 1004
 
+
+
 # THINGS TO DO - MARK OFF TASKS ALREADY DONE [ ]
 
 - [ ] An index HTML page
 - [ ] JSON output to a flat file
 - [ ] JSON input from a flat file
 - [ ] A single page application showing some form of interactivity
+- [ ] https://blog.hubspot.com/website/web-safe-html-css-fonts
 - [X] Calculate plan button
 - [X] display calorific needs before getting api response
 - [X] Implement determination level into calorific needs
