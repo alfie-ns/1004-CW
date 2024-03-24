@@ -23,6 +23,11 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #FF9A8A;
+}
+
+
 .response_links {
   color: rgb(34, 11, 234);
   

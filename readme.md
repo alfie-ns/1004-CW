@@ -1,14 +1,13 @@
 # Dr. Fit 1004
 
-
-
-# THINGS TO DO - MARK OFF TASKS ALREADY DONE [ ]
+# THINGS TO DO - MARK OFF TASKS COMPLETED
 
 - [ ] An index HTML page
 - [ ] JSON output to a flat file
 - [ ] JSON input from a flat file
 - [ ] A single page application showing some form of interactivity
 - [ ] https://blog.hubspot.com/website/web-safe-html-css-fonts
+- [ ] look into and optimise styles.css
 - [X] Calculate plan button
 - [X] display calorific needs before getting api response
 - [X] Implement determination level into calorific needs
@@ -59,4 +58,5 @@ Show how this works [ ]
 ## Function calling prompts:
 
 - "How many calories will I burn if I do 30 minutes of running?"
+
 # 1004-DrFit
