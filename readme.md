@@ -1,6 +1,6 @@
 # Dr. Fit 1004
 
-# THINGS TO DO - MARK OFF TASKS COMPLETED
+# THINGS TO DO
 
 - [ ] An index HTML page
 - [ ] JSON output to a flat file
