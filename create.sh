@@ -18,4 +18,4 @@ echo "INSERT INTO users (username, email, password, gender, age, height, weight,
 
 # This command is used to OUTPUT the current DATABASE SCHEMA to verify the structure of the database.
 # It is used for debugging and ensuring that all tables have been created correctly.
-echo ".schema" | sql
+echo ".schema" | sqlite3 database.db

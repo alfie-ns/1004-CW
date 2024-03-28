@@ -1,5 +1,8 @@
-flask --app app run
-@REM set FLASK_APP=app
-@REM set FLASK_DEBUG=1
-@REM flask run
-ls
+#!/bin/bash
+
+# Setting Flask application environment variables
+export FLASK_APP=app
+export FLASK_ENV=development
+
+# Starting Flask application with python3
+python3 -m flask run
