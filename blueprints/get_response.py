@@ -1,6 +1,6 @@
 # Import necessary modules
 # Import necessary modules
-import sqlite3, openai, tempfile, tiktoken, time, asyncio, json
+import sqlite3, openai, tempfile, tiktoken, time, asyncio, json, pdfkit, os
 from celery import Celery # Brokers: RabbitMQ and Redis
 from aiohttp import ClientSession
 from flask import render_template, request, session, Blueprint, Response
@@ -477,33 +477,38 @@ def report() -> render_template:
 #DOWNLOAD REPORT ROUTE
 @get_response.route('/download_report')
 @login_required
-def download_report() -> Response:
-    # Get the initial plan from the database
+def download_report():
+    # Fetch the initial plan from the database
     conn = sqlite3.connect('database.db')
     curs = conn.cursor()
     curs.execute("SELECT initial_plan FROM users WHERE id = ?", (current_user.id,))
     initial_plan = curs.fetchone()
     conn.close()
+    
+    # Check if initial_plan exists
+    if initial_plan:
+        plan = initial_plan[0]
+    else:
+        print("No plan available.")
+        return "No plan available to download", 404  # Or another appropriate response
 
-    # Set plan to the initial plan if it exists
-    plan = initial_plan[0] if initial_plan else print("No plan available.\n")
-
-    # Create a temporary file
+    temp_file_path = None # Initialize temporary file path
     with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as temp:
-        # Render plan string to PDF and write it to temporary file
-        #pdfkit.from_string(plan, temp.name, configuration=config)
-        
-        # Rewind the file pointer to the beginning
-        temp.seek(0)
+        pdfkit.from_string(plan, temp.name)  # Convert plan to PDF
+        temp_file_path = temp.name
 
-        # Read the file into memory
-        body = temp.read()
-
-    # Create a report with the PDF as the body
+    # Read the generated PDF and prepare the response
+    with open(temp_file_path, 'rb') as temp_file:
+        body = temp_file.read()
+    
+    # Clean up by deleting the temporary PDF file
+    os.remove(temp_file_path)
+    
+    # Return the PDF as a response
     report = Response(body, mimetype='application/pdf')
     report.headers.set('Content-Disposition', 'attachment', filename='report.pdf')
-    
     return report
+
 
 #INITIAL_PLAN ROUTE
 @get_response.route('/get_initial_plan', methods=['GET', 'POST'])

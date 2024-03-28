@@ -37,22 +37,13 @@
                         <a class="nav-link" href="{{ url_for('routes.workout_library', user_id=current_user.id) }}">Workout Library</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('routes.article_tips', user_id=current_user.id) }}">Articles & Tips</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('user.delete_account', user_id=current_user.id) }}" onclick="return confirm('Are you sure you would like to delete your account? This cannot be undone.')">Delete Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('get_response.mainPage', user_id=current_user.id) }}">Talk to Dr.Fit</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('routes.day_planner', user_id=current_user.id) }}">Journal</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{ url_for('get_response.report') }}">Report</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('youtube.get_youtube') }}">YouTube</a></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('login.logout') }}">Logout</a>
