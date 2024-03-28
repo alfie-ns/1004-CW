@@ -1,0 +1,21 @@
+{
+    "users": [
+        {
+            "activity_level": "moderately_active",
+            "age": "20",
+            "bmr_type": "mifflin_st_jeor",
+            "body_fat_percentage": null,
+            "determination_level": "casual",
+            "email": "oladeanio@gmail.com",
+            "gender": "male",
+            "goal": "bulk",
+            "height": 175.0,
+            "hip": "",
+            "neck": "",
+            "password": "Password1!",
+            "username": "testUser",
+            "waist": "",
+            "weight": "75"
+        }
+    ]
+}

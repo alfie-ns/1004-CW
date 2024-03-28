@@ -3,9 +3,9 @@
 # THINGS TO DO
 
 - [X] An index HTML page
-- [ ] JSON output to a flat file
+- [X] JSON output to a flat file
 - [ ] JSON input from a flat file
-- [ ] A single page application showing some form of interactivity
+- [X] A single page application showing some form of interactivity
 - [ ] https://blog.hubspot.com/website/web-safe-html-css-fonts
 - [ ] look into and optimise styles.css
 - [X] Calculate plan button

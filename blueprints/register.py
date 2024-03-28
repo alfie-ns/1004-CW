@@ -1,6 +1,6 @@
 # This file contains the register blueprint, which handles the registration of new users
 
-from flask import Flask, render_template, request, Blueprint, jsonify
+from flask import Flask, render_template, request, Blueprint, jsonify, json
 #from werkzeug.security import generate_password_hash
 import sqlite3, re
 from flask_mail import Mail, Message
@@ -79,6 +79,43 @@ def process_register(): #request.form.get() gets "name" of input field
             curs.execute("INSERT INTO users (username, email, password, gender, age, height, weight, waist, neck, hip, goal, determination_level, activity_level, bmr_type, body_fat_percentage, initial_plan) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (username, email, password, gender, age, height, weight, waist, neck, hip, goal, determination_level, activity_level, bmr_type, body_fat_percentage, ''))
             conn.commit()
             conn.close()
+
+            # .JSON INTERGRATION
+
+            new_user = {
+                'username': username,
+                'email': email,
+                'password': password,
+                'gender': gender,
+                'age': age,
+                'height': height,
+                'weight': weight,
+                'waist': waist,
+                'neck': neck,
+                'hip': hip,
+                'goal': goal,
+                'determination_level': determination_level,
+                'activity_level': activity_level,
+                'bmr_type': bmr_type,
+                'body_fat_percentage': body_fat_percentage
+            }
+
+            # Path to your JSON file
+            json_file_path = '/Users/alfienurse/Library/CloudStorage/GoogleDrive-alfienurse@gmail.com/My Drive/Uni/Undergrad/BSc (Hons) Computer Science (Artificial Intelligence) (7392)/Year_1/COMP1004/1004-DrFit/users.json'
+
+            # Read the existing data in the file
+            try:
+                with open(json_file_path, 'r') as file:
+                    data = json.load(file)
+            except FileNotFoundError:
+                data = {"users": []}
+
+            # Add the new user to the list of users
+            data['users'].append(new_user)
+
+            # Write the updated data back to the file
+            with open(json_file_path, 'w') as file:
+                json.dump(data, file, indent=4)
 
             # Confirmation email testing
             msg = Message("Welcome to VPT!", recipients=[email])
