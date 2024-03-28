@@ -2,7 +2,7 @@
 
 # THINGS TO DO
 
-- [ ] An index HTML page
+- [X] An index HTML page
 - [ ] JSON output to a flat file
 - [ ] JSON input from a flat file
 - [ ] A single page application showing some form of interactivity
@@ -58,5 +58,3 @@ Show how this works [ ]
 ## Function calling prompts:
 
 - "How many calories will I burn if I do 30 minutes of running?"
-
-# 1004-DrFit
