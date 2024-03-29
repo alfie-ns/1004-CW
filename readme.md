@@ -2,6 +2,7 @@
 
 # THINGS TO DO
 
+- [ ] Turn into a fully-fledged SPA
 - [X] An index HTML page
 - [X] JSON output to a flat file
 - [ ] JSON input from a flat file
