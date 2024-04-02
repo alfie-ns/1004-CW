@@ -89,7 +89,7 @@ function handleGenderSelect(selectElement) {
 
     if (selectElement.value === 'other') {
         genderTooltip.style.display = "inline-block";
-        genderTooltip.innerHTML = "Gender plays a crucial role in the calculation of daily calorie needs, as it influences factors such as basal metabolic rate, muscle mass, and energy expenditure. Therefore, it is necessary to provide your biological gender for a more accurate determination of your personalized calorie count.";
+        genderTooltip.innerHTML = "Gender plays a crucial role in the calculation of daily calorie needs, as it influences factors such as basal metabolic rate, muscle mass, and energy expenditure. Therefore, it is necessary to provide your biological gender for a more accurate determination of your personalised calorie count.";
         selectElement.value = ''; // reset the select to the placeholder
         validationStates.gender = false;
     } else {
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordInput = document.getElementById("password");
     const confirmPasswordInput = document.getElementById("confirm-password");
     const usernameError = document.getElementById("username-error");
-    const passwordError = document.getElementById("password-error");
+    //const passwordError = document.getElementById("password-error");
     const confirmPasswordError = document.getElementById("confirm-password-error");
     const registerBtns = document.querySelectorAll(".reg_log_submit_btns");
     const ageInput = document.getElementById("age");
@@ -136,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
             registerBtns.forEach((btn) => {
                 btn.classList.remove("disabled");
                 btn.disabled = false;
+                btn.enabled = true;
             });
         } else {
             // If any validationStates are false, disable the buttons
@@ -228,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 passwordInput.style.backgroundColor = "#FFFF00"; // Yellow: Ok password
                 break;
             case 2:
-                passwordInput.style.backgroundColor = "#9ACD32"; // Dark Yellow: Strong password
+                passwordInput.style.backgroundColor = "#9ACD32"; // Yellow Green: Good password
                 break;
             case 3:
                 passwordInput.style.backgroundColor = "#008000"; // Green: Very Strong password
