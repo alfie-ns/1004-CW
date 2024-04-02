@@ -123,29 +123,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const usernameError = document.getElementById("username-error");
     //const passwordError = document.getElementById("password-error");
     const confirmPasswordError = document.getElementById("confirm-password-error");
-    const registerBtns = document.querySelectorAll(".reg_log_submit_btns");
+    //const registerBtns = document.querySelectorAll(".reg_log_submit_btns");
     const ageInput = document.getElementById("age");
     const genderSelect = document.getElementById("gender");
 
     let debounceTimer;
 
-    // Function to update button state based on validationStates
-    const updateButtonState = () => {
-        if (Object.values(validationStates).every((state) => state === true)) {
-            // If all validationStates are true, enable the buttons
-            registerBtns.forEach((btn) => {
-                btn.classList.remove("disabled");
-                btn.disabled = false;
-                btn.enabled = true;
-            });
+    function checkAllValidationStates() {
+        // Check if all validationStates values are true
+        const allValid = Object.values(validationStates).every(state => state === true);
+        
+        if (allValid) {
+            // If all validations are passed, you could enable the register button or alert the user
+            // This is a simple alert for demonstration; you might want to handle this differently
+            alert("All validations are passed. You can now submit the form.");
         } else {
-            // If any validationStates are false, disable the buttons
-            registerBtns.forEach((btn) => {
-                btn.classList.add("disabled");
-                btn.disabled = true;
-            });
+            // If not all validations are passed, alert or handle accordingly
+            alert("Some validations are not passed. Please check your inputs.");
         }
-    };
+    }
+
 
     genderSelect.addEventListener("change", () => {
         handleGenderSelect(genderSelect);
