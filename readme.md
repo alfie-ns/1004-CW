@@ -7,8 +7,8 @@
 - [X] JSON output to a flat file
 - [ ] JSON input from a flat file
 - [X] A single page application showing some form of interactivity
-- [ ] https://blog.hubspot.com/website/web-safe-html-css-fonts
-- [ ] look into and optimise styles.css
+- [X] https://blog.hubspot.com/website/web-safe-html-css-fonts
+- [X] look into and optimise styles.css
 - [X] Calculate plan button
 - [X] display calorific needs before getting api response
 - [X] Implement determination level into calorific needs

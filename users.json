@@ -50,6 +50,23 @@
             "username": "test",
             "waist": "",
             "weight": "70"
+        },
+        {
+            "activity_level": "extra_active",
+            "age": "21",
+            "bmr_type": "mifflin_st_jeor",
+            "body_fat_percentage": null,
+            "determination_level": "casual",
+            "email": "alfiemnurse@gmail.com",
+            "gender": "male",
+            "goal": "healthy_happiness",
+            "height": 175.0,
+            "hip": "",
+            "neck": "",
+            "password": "Bartoshki1!",
+            "username": "Oladeanio",
+            "waist": "",
+            "weight": "70"
         }
     ]
 }
