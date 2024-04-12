@@ -6,7 +6,7 @@ Welcome to the repository for Dr. Fit 1004, a comprehensive fitness application 
 
 This portfolio includes the following items to showcase the development and features of the Dr. Fit application:
 
-- [X] A final project plan that illustrates the project's backlog and sprints. (To-Do)
+- [X] A final project plan that illustrates the project's backlog and sprints.
 - [X] A complete set of UML diagrams representing the application's architecture.
 - [X] Completed and finished GitHub repository with comprehensive documentation.
 - [X] A README file that outlines the project's purpose, usage, and key features. (Current document)
@@ -23,7 +23,7 @@ This portfolio includes the following items to showcase the development and feat
 
 ## Completed Tasks
 
-- [X] Optimized `styles.css` for better visual appeal and performance.
+- [X] Optimised `styles.css` for better visual appeal and performance.
 - [X] Created a 'Calculate Plan' feature for instant fitness planning.
 - [X] Displayed calorific needs upfront before fetching API responses.
 - [X] Integrated determination level into calorific needs and prompts.
@@ -34,7 +34,7 @@ This portfolio includes the following items to showcase the development and feat
 - [X] Resolved report generation issue.
 - [X] Activated additional calculation functions.
 - [X] Integrated the YouTube API and documented its implementation.
-- [X] Provided comprehensive inline comments for YouTube API integration.
+- [X] Provided comprehensive inline comments for YouTube API integration(I can't find this anyways, however I did copy the functionality onto my VidBriefs app i made)
 
 ## To-Do List
 
@@ -44,8 +44,8 @@ This portfolio includes the following items to showcase the development and feat
 - [ ] Complete the 'Calories Burnt' calculation function.
 - [ ] Explore GPT-3's potential in generating tailored nutrition plans in `nutrition.py`.
 - [ ] Investigate GPT-3's ability in formulating workout plans in `workout.py`.
-- [ ] Finalize registration checks to ensure data integrity.
-- [ ] Optimize function speed by reducing database connections within functions.
+- [ ] Finalise registration checks to ensure data integrity.
+- [ ] Optimise function speed by reducing database connections within functions.
 - [ ] Determine the most effective calorie calculation method for each fitness goal.
 - [ ] Implement YouTube transcripts for an enriched multimedia experience.
 - [ ] Delegate all calculations to OpenAI API with function calls.
