@@ -15,7 +15,7 @@ This portfolio includes the following items to showcase the development and feat
 
 ## Project Objectives
 
-- [ ] Transform into a fully-fledged SPA.
+- [X] Transform into a SPA.
 - [X] Implement an index HTML page that serves as the application's entry point.
 - [X] Enable JSON output to a flat file for data persistence.
 - [ ] Enable JSON input from a flat file to restore the application state.
@@ -70,7 +70,7 @@ Future iterations of Dr. Fit 1004 aim to include advanced functions such as:
 
 Users can interact with Dr. Fit using natural language, and it'll make calls to functions if necessary. For example:
 
-- "How many calories will I burn if I do 30 minutes of running?"
+- "How many calories will I burn if I do 30 minutes of {activity}?"
 
 ## Getting Started
 
