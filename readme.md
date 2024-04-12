@@ -1,5 +1,16 @@
 # Dr. Fit 1004
 
+# Final Portfolio
+Your final portfolio comprises the following items:
+- [ ] A representation of your final project plan. This should illustrate your backlog and sprints.
+- [ ] A complete set of UML diagrams to represent your application.
+- [X] A completed and finished GitHub repo. 
+- [ ] The readme file must outline your project.
+- [ ] A poster illustrating the key features of your application and the architecture.
+- [ ] A reflective account of approximately 500 words considering the issues and challenges
+arising from the project.
+
+
 # THINGS TO DO
 
 - [ ] Turn into a fully-fledged SPA
