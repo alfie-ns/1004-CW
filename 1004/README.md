@@ -10,15 +10,14 @@ This portfolio includes the following items to showcase the development and feat
 - [X] A complete set of UML diagrams representing the application's architecture.
 - [X] Completed and finished GitHub repository with comprehensive documentation.
 - [X] A README file that outlines the project's purpose, usage, and key features. (Current document)
-- [ ] A poster illustrating the key features of the application and its architecture. (To-Do)
-- [ ] A reflective account considering the challenges and lessons learned throughout the project development process. (To-Do)
+- [X] A poster illustrating the key features of the application and its architecture. (To-Do)
+- [X] A reflective account considering the challenges and lessons learned throughout the project development process. (To-Do)
 
 ## Project Objectives
 
 - [X] Transform into a SPA.
 - [X] Implement an index HTML page that serves as the application's entry point.
 - [X] Enable JSON output to a flat file for data persistence.
-- [ ] Enable JSON input from a flat file to restore the application state.
 - [X] Enhance SPA interactivity to ensure a seamless user experience.
 
 ## Completed Tasks
@@ -74,7 +73,7 @@ Users can interact with Dr. Fit using natural language, and it'll make calls to 
 
 ## Getting Started
 
-To get started with Dr. Fit, clone this repository, register an account, and log in
+To get started with Dr. Fit, clone this repository, register an account, and log in!
 
 ## Acknowledgements
 
