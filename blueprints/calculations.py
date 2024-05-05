@@ -69,6 +69,7 @@ def calculate_calories_burnt(weight=None, activity=None, duration=None, distance
         "Football": 10.3,
         "Rope jumping (84/min)": 10.5,
         "Rope jumping (100/min)": 11.0,
+        "jogging": 11.2,
         "running": 11.2,
     }
 
