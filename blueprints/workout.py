@@ -20,7 +20,7 @@ def generate_workout_plan():
                                """
     
     res = openai.ChatCompletion.create(
-        model="gpt-4-1106-preview",
+        model="gpt-4-turbo",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "system", "content": workout_generate_prompt}

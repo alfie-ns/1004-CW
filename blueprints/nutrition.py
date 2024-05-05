@@ -27,7 +27,7 @@ def generate_meal_plan():
                     while meeting their daily caloric needs. Please suggest a weekly meal plan."""
 
     response = openai.ChatCompletion.create(
-      model="gpt-4-1106-preview",
+      model="gpt-4-turbo",
       messages=[
           {"role": "system", "content": "You are a helpful assistant."},
           {"role": "user", "content": prompt}

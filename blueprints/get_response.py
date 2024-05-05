@@ -238,7 +238,7 @@ def response() -> render_template:
     #use_api = False
 
     #Variable initialization for function calling
-    model="gpt-4-1106-preview"
+    model="gpt-4-turbo"
     function_dict = {
     'calculate_bmr': calculate_bmr,
     'calculate_calorific_needs': calculate_calorific_needs, 

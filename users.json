@@ -101,6 +101,23 @@
             "username": "Oladeanio",
             "waist": "",
             "weight": "70"
+        },
+        {
+            "activity_level": "moderately_active",
+            "age": "21",
+            "bmr_type": "mifflin_st_jeor",
+            "body_fat_percentage": null,
+            "determination_level": "casual",
+            "email": "cmwwm@feie.com",
+            "gender": "male",
+            "goal": "improve_endurance",
+            "height": 175.0,
+            "hip": "",
+            "neck": "",
+            "password": "Password1!",
+            "username": "Oladeanio",
+            "waist": "",
+            "weight": "75"
         }
     ]
 }

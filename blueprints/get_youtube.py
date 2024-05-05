@@ -51,7 +51,7 @@ def split_into_chunks(text_list, max_chunk_size):
     return chunks
 
 def get_interpretation_chunks(chunks):
-    model = "gpt-4-1106-preview"
+    model = "gpt-4-turbo"
     responses = [] # Empty list to store the responses
     user_goal = goal_descriptions[get_user_goal()] # Get descriptive goal
     print("USERS GOAL: ", user_goal)
