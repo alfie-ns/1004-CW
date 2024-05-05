@@ -355,7 +355,12 @@ animation: loaderAnimation 1.2s linear infinite;
     text-decoration: none;
     transition: transform .2s ease-in-out;
 }
-
+.getplan_contain {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 100%;             
+}
 .message-container-gpt {
   background-color: #53a4fb98;
   padding: 5px;

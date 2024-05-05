@@ -23,10 +23,11 @@
                 <li><b>Body Fat Percentage</b> {{ current_user.get_body_fat() }} </li>
             </ul>
             <hr>
-            <div class="account_button_container"></div>
+            <div class="getplan_contain">
                 <form action="/get_initial_plan" method="POST">
                     <button class = "get_initial_btn" type="submit">Get your plan</button>
                 </form> 
+            </div>
         </body>
     </div>
         <br>
