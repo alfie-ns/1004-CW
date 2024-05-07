@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Recreate the database
 
