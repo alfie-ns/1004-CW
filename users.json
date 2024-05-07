@@ -118,6 +118,40 @@
             "username": "Oladeanio",
             "waist": "",
             "weight": "75"
+        },
+        {
+            "activity_level": "moderately_active",
+            "age": "21",
+            "bmr_type": "mifflin_st_jeor",
+            "body_fat_percentage": null,
+            "determination_level": "casual",
+            "email": "alfienurse@gmail.com",
+            "gender": "male",
+            "goal": "six_pack",
+            "height": 175.0,
+            "hip": "",
+            "neck": "",
+            "password": "Bartoshki1!",
+            "username": "Oladeanio",
+            "waist": "",
+            "weight": "75"
+        },
+        {
+            "activity_level": "lightly_active",
+            "age": "21",
+            "bmr_type": "mifflin_st_jeor",
+            "body_fat_percentage": null,
+            "determination_level": "casual",
+            "email": "alfienurse@gmail.com",
+            "gender": "male",
+            "goal": "six_pack",
+            "height": 175.0,
+            "hip": "",
+            "neck": "",
+            "password": "Bartoshki1!",
+            "username": "Oladeanio",
+            "waist": "",
+            "weight": "75"
         }
     ]
 }

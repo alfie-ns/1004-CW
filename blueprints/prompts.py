@@ -4,7 +4,7 @@ prompts = Blueprint('prompts', __name__, template_folder='templates', static_fol
 
 # A multi-line string containing system prompts for the AI
 system_prompts = """
-    Topics you will have knowledge over, and will discuss with the user is randomized, tell the user a fact about one of the topis below, that will help them with there goal:
+    Topics you will have knowledge over, and will discuss with the user is randomised, tell the user a fact about one of the topis below, that will help them with there goal:
         - The importance of a healthy diet and regular exercise
         - Essential components of a well-rounded fitness program
         - Crucial nutrients for optimal health and their food sources

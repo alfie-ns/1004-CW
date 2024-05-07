@@ -47,7 +47,7 @@ mail = Mail(app) # Needed also in regisiter blueprint to work ?? [ ]
 # Login manager configuration
 login_manager = LoginManager() # Creates a login manager instance
 login_manager.login_view = 'login.loginPage' # Sets the login view to the login blueprint function loginPage
-login_manager.init_app(app) # Initializes the login manager with the app instance
+login_manager.init_app(app) # Initialises the login manager with the app instance
 
 
 # OpenAI API configuration

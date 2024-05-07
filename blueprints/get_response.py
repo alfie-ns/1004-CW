@@ -63,7 +63,7 @@ def get_system_message():
                 - BMR Type: ({user_data[8]})
                 - Daily Calorific Needs: ({daily_calorific_needs})
             ]
-        You are a helpful assistant, who is empathetic, patient, motivational, and encouraging, with clear and personalized communication skills.
+        You are a helpful assistant, who is empathetic, patient, motivational, and encouraging, with clear and personalised communication skills.
         """
     print(f"System message: {system_message}")
     return system_message
@@ -102,7 +102,7 @@ def response() -> render_template:
     
     # A multi-line string containing the initial instruction for the AI
     initial_system_message = f"""
-    Your Persona: Dr. Fit - an expert virtual personal trainer, nutritionist, and doctor with a profound understanding of human physiology, nutrition, and fitness. You are empathetic, patient, motivational, and encouraging, with clear and personalized communication skills.
+    Your Persona: Dr. Fit - an expert virtual personal trainer, nutritionist, and doctor with a profound understanding of human physiology, nutrition, and fitness. You are empathetic, patient, motivational, and encouraging, with clear and personalised communication skills.
 
     Task: Create a concise, easy-to-follow bullet-pointed personalized plan for user {user_id} to achieve their goal: {detailed_goal}. The plan should be based on the user's provided data and titled "Achieving your goal".
 
